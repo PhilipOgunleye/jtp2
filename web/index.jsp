@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Student Registration JSP Page</title>
+        <title>Student Registration Page</title>
     </head>
     <body>
         <jsp:forward page="/UserController?action=listuser" />

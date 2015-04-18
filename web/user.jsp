@@ -11,7 +11,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Display All Users</title>
+        <title>Add new Users</title>
     </head>
     <body>
         <form method="POST" action='UserController' name="frmAddUser">
@@ -19,10 +19,10 @@
                 System.out.println(action);
             %>
             <% if (action.equalsIgnoreCase("edit")) {%>
-            User Name : <input type="text" name="uname"
+            User Name : <input type="text" name="username"
                                value="<c:out value="${user.uname}" />" readonly="readonly"/> (You Can't Change this)<br /> 
             <%} else {%>
-            User Name : <input type="text" name="uname"
+            User Name : <input type="text" name="username"
                                value="<c:out value="${user.uname}" />" /> <br />
             <%}%>
             Password : <input

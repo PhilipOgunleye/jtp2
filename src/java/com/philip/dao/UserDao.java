@@ -22,7 +22,7 @@ public class UserDao {
  
     public void checkUser(User user) {
         try {
-            PreparedStatement ps = connection.prepareStatement("select uname from users where uname = ?");
+            PreparedStatement ps = connection.prepareStatement("select username from users where username = ?");
             ps.setString(1, user.getUsername());
             ResultSet rs = ps.executeQuery();
             if (rs.next()) // found
@@ -37,7 +37,7 @@ public class UserDao {
     }
     public void addUser(User user) {
         try {
-            PreparedStatement preparedStatement = connection.prepareStatement("insert into users(uname, password, email, registeredon) values (?, ?, ?, ? )");
+            PreparedStatement preparedStatement = connection.prepareStatement("insert into users(username, password, email, registeredon) values (?, ?, ?, ? )");
             // Parameters start with 1
             preparedStatement.setString(1, user.getUsername());
             preparedStatement.setString(2, user.getPassword());
@@ -52,7 +52,7 @@ public class UserDao {
  
     public void deleteUser(String userId) {
         try {
-            PreparedStatement preparedStatement = connection.prepareStatement("delete from users where uname=?");
+            PreparedStatement preparedStatement = connection.prepareStatement("delete from users where username=?");
             // Parameters start with 1
             preparedStatement.setString(1, userId);
             preparedStatement.executeUpdate();
@@ -65,7 +65,7 @@ public class UserDao {
     public void updateUser(User user) {
         try {
             PreparedStatement preparedStatement = connection.prepareStatement("update users set password=?, email=?, registeredon=?"
-                    + "where uname=?");
+                    + "where username=?");
             // Parameters start with 1
             System.out.println(new java.sql.Date(user.getRegisteredon().getTime()));
             preparedStatement.setString(1, user.getPassword());
@@ -86,7 +86,7 @@ public class UserDao {
             ResultSet rs = statement.executeQuery("select * from users");
             while (rs.next()) {
                 User user = new User();
-                user.setUsername(rs.getString("uname"));
+                user.setUsername(rs.getString("username"));
                 user.setPassword(rs.getString("password"));
                 user.setEmail(rs.getString("email"));
                 user.setRegisteredon(rs.getDate("registeredon"));
@@ -102,12 +102,12 @@ public class UserDao {
     public User getUserById(String userId) {
         User user = new User();
         try {
-            PreparedStatement preparedStatement = connection.prepareStatement("select * from users where uname=?");
+            PreparedStatement preparedStatement = connection.prepareStatement("select * from users where username=?");
             preparedStatement.setString(1, userId);
             ResultSet rs = preparedStatement.executeQuery();
  
             if (rs.next()) {
-                user.setUsername(rs.getString("uname"));
+                user.setUsername(rs.getString("username"));
                 user.setPassword(rs.getString("password"));
                 user.setEmail(rs.getString("email"));
                 user.setRegisteredon(rs.getDate("registeredon"));
