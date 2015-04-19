@@ -29,7 +29,7 @@
                     <td><c:out value="${user.username}" /></td>
                     <td><c:out value="${user.email}" /></td>
                     <td><fmt:formatDate pattern="dd MMM,yyyy" value="${user.registeredon}" /></td>
-                    <td><a href="UserController?action=edit&userId=<c:out value="${user.username}"/>">Update</a></td>
+                  <td><a href="UserController?action=edit&userId=<c:out value="${user.username}"/>">Update</a></td>
                     <td><a href="UserController?action=delete&userId=<c:out value="${user.username}"/>">Delete</a></td>
                 </tr>
             </c:forEach>

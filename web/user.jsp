@@ -20,10 +20,10 @@
             %>
             <% if (action.equalsIgnoreCase("edit")) {%>
             User Name : <input type="text" name="username"
-                               value="<c:out value="${user.uname}" />" readonly="readonly"/> (You Can't Change this)<br /> 
+                               value="<c:out value="${user.username}" />" readonly="readonly"/> (You Can't Change this)<br /> 
             <%} else {%>
             User Name : <input type="text" name="username"
-                               value="<c:out value="${user.uname}" />" /> <br />
+                               value="<c:out value="${user.username}" />" /> <br />
             <%}%>
             Password : <input
                 type="password" name="pass"
