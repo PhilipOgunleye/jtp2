@@ -17,7 +17,7 @@ public class Database {
               Class.forName("com.mysql.jdbc.Driver");
               Connection con = DriverManager.getConnection
                       ("jdbc:mysql://localhost:3306/dbname",
-                      "root","dbpass");
+                      "root","");
               return con;
           }
           catch(Exception ex) {
